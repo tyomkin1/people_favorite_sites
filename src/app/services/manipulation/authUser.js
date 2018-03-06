@@ -5,14 +5,13 @@
 (function() {
   "use strict";
 
-  function authUser($localStorage, $rootScope) {
+  function authUser($localStorage) {
     var login = "user123",
-      password = "456789";
+      password = "456789",
+     data
 
     if ($localStorage["app.session"]) {
-      var data = $localStorage["app.session"];
-    } else {
-      var data;
+       data = $localStorage["app.session"];
     }
 
     var service = {
@@ -53,6 +52,6 @@
     }
   }
 
-  authUser.$inject = ["$localStorage", "$rootScope"];
+  authUser.$inject = ["$localStorage"];
   angular.module("model.authUser", []).factory("authUser", authUser);
 })();

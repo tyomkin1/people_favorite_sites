@@ -43,32 +43,31 @@
               function(res) {
                 return getAllItems(res);
               },
-              function(res) {
-              }
+              function(res) {}
             );
 
             function getAllItems(keys) {
+              console.log(keys);
               var promises = keys.map(function(key) {
                 return $localForage.getItem(key).then(
                   function(res) {
                     return res;
                   },
-                  function(res) {
+                  function() {
                     req();
                   }
                 );
               });
-             return Promise.all(promises).then(
+              return Promise.all(promises).then(
                 function(results) {
-                  console.log(results);
-                  if (results && results.length>0){
-                      return results;
+                  if (results && results.length > 0) {
+                    console.log(results);
+                    return results;
                   } else {
-                      return req();
+                    return req();
                   }
-
                 },
-                function(res) {
+                function() {
                   return req();
                 }
               );

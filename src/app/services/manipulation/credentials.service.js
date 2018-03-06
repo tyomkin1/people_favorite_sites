@@ -13,8 +13,6 @@
     return service;
 
     function authorized(toState) {
-
-
       if (
         // User authenticated
         (toState.auth && authUser.data) ||

@@ -4,10 +4,10 @@
     var vm = this;
     vm.logout = logout;
     function logout() {
-        auth.logout();
+      auth.logout();
     }
   }
 
-  MainCtrl.$inject = ['auth'];
+  MainCtrl.$inject = ["auth"];
   angular.module("inspinia").controller("MainCtrl", MainCtrl);
 })();

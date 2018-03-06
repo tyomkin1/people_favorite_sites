@@ -3,11 +3,13 @@
   function WorkListController(getUsers, $localForage, $window) {
     var vm = this;
     vm.users = getUsers;
-    console.log(vm.users);
     vm.isShowDetails = false;
     vm.user = {};
-    vm.users.forEach(function(item, i) {
-      $localForage.setItem(item.id, item).then(function() {});
+
+    vm.users.forEach(function(item) {
+      if ($localForage.length() !== vm.users.length) {
+        $localForage.setItem(item.id, item).then(function() {});
+      }
       if (item.avatar) {
         item["path_avatar"] = $window.URL.createObjectURL(item.avatar);
       }
@@ -15,7 +17,7 @@
 
     vm.showDetails = showDetails;
     vm.showDetailsFavorites = showDetailsFavorites;
-    vm.closeUserDetails = vm.closeUserDetails;
+    vm.closeUserDetails = closeUserDetails;
     vm.add = add;
     vm.save = save;
     vm.uploadPicture = uploadPicture;
@@ -52,10 +54,8 @@
       if (key) {
         user.id = key;
       }
-      $localForage.setItem(user.id, user).then(function(res) {
-        console.log(res, "res");
+      $localForage.setItem(user.id, user).then(function() {
         $localForage.getItem(user.id).then(function(data) {
-          console.log(data, "data");
           forEachItem(data, key);
         });
       });
@@ -92,10 +92,8 @@
     }
 
     function remove(user) {
-      $localForage.removeItem(user.id).then(function(res) {
-        console.log(res, "res");
-        $localForage.getItem(user.id).then(function(data) {
-          console.log(data, "data");
+      $localForage.removeItem(user.id).then(function() {
+        $localForage.getItem(user.id).then(function() {
           removeforEachItem(user);
         });
       });
@@ -122,14 +120,13 @@
       var keys, max;
       return (keys = $localForage.keys().then(function(res) {
         max = Math.max.apply(null, res);
-        console.log(res, max);
         return max + 1;
       }));
     }
 
     function deleteAva() {
-     delete vm.user.avatar;
-     delete vm.user.path_avatar;
+      delete vm.user.avatar;
+      delete vm.user.path_avatar;
     }
   }
 

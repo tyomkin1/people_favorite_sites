@@ -70,20 +70,6 @@
           }
         },
         function(response) {
-          console.info("error", config.headers);
-          console.info("error", url, response);
-
-          if (response.status === 200) {
-            // toastr.error(response.data);
-          } else if (response.status === -1) {
-            // toastr.error('Server unavailable');
-          } else if (response.status === 500) {
-            // toastr.error( response.status + ' ' + response.data.message);
-          } else if (response.status === 403) {
-            // toastr.error('Access denied.');
-          } else {
-            // toastr.error(+ response.status + ' ' + response.statusText);
-          }
           defer.reject(response.data);
         }
       );
@@ -120,27 +106,12 @@
 
       $http.post(url, data, config).then(
         function(response) {
-          console.info("response", url, response);
           if (response.data.error) {
-            // toastr.error(response.data.error);
             defer.reject(response.data.error);
           }
           defer.resolve(response.data);
         },
         function(response) {
-          console.info("error", url, response);
-
-          if (response.status === 200) {
-            // toastr.error('Server Error: ' + response.data);
-          } else if (response.status === -1) {
-            // toastr.error('Server unavailable');
-          } else if (response.status === 500) {
-            // toastr.error('Server Error: ' + response.status + ' ' + response.data.message);
-          } else if (response.status === 403) {
-            // toastr.error('Access denied.');
-          } else {
-            // toastr.error('Server Error: ' + response.status + ' ' + response.statusText);
-          }
           defer.reject(response.data);
         }
       );
