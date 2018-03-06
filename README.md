@@ -11,7 +11,7 @@
 NOTE: To install this project you need npm, bower and gulp.
 
 1. Open terminal
-2. Clone this repo with `git clone ...`
+2. Clone this repo with `git clone https://github.com/tyomkin1/people_favorite_sites.git`
 3. Move to root project folder
 4. Install bower components with `bower install`
 5. Install node components with `npm install`
