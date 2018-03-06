@@ -1,0 +1,182 @@
+.work-list {
+  table {
+    width: 100%;
+  }
+
+  .active-user{
+    background-color: #a2cd0c;
+  }
+
+  .avatar{
+    max-width:50px;
+    height:auto;
+    border-radius: 50%;
+  }
+
+  .wrapper-user-avatar{
+    text-align: center;
+    padding-bottom:20px;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    .avatar-user{
+      max-width:150px;
+      height:auto;
+      border-radius: 50%;
+    }
+  }
+
+  .group-buttons{
+    margin-top:20px;
+  }
+
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    display: inline-block;
+    background: url('../assets/images/avatar_placeholder.png') center no-repeat;
+    background-size: cover;
+  }
+
+
+  .delete-avatar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    color: #ed5565;
+  }
+
+  .btn-wrapper{
+    display: grid;
+    margin-bottom:20px;
+  }
+
+  .bnt-site{
+    border: 1px solid @navy;
+    background-color: #fff;
+    color: @navy;
+    &:hover{
+      color:white;
+      background-color: @navy;
+    }
+    &.delete{
+      border: 1px solid @red;
+      color: @red;
+      &:hover{
+        color:white;
+        background-color: @red;
+      }
+    }
+  }
+
+  .show-details{
+    .ibox-title{
+      padding: 18px 15px 19px 15px;
+    }
+  }
+
+  .form-control-static-title{
+    margin-bottom:23px
+  }
+
+  .form-control-static{
+   padding: 6px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .form-control{
+    transition: none;
+  }
+
+
+ .bnt-site.add{
+    margin-right:5px;
+  }
+
+
+
+  .group {
+    input {
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* active state */
+    input.ng-touched:invalid ~ label {
+      color: #f85c5f;
+    }
+
+
+    .bar {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    .bar:before, .bar:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: @navy;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+    .bar:before {
+      left: 50%;
+    }
+    .bar:after {
+      right: 50%;
+    }
+
+    /* active state */
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+      width: 50%;
+    }
+  }
+
+
+  thead tr {
+    border-bottom: 1px solid #f3f3f4;
+  }
+
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th {
+    color: #fff;
+  }
+
+
+  thead tr th {
+    background: #485059;
+  }
+
+  .odd {
+    background-color: #f3f3f4;
+  }
+
+.table-main{
+  tr:hover{
+    background-color: #ceef88;
+    cursor:pointer;
+  }
+}
+
+}
+

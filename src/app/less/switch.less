@@ -1,0 +1,43 @@
+.switch :checked+i {
+  padding-right: 0;
+  padding-left: 20px;
+  background: #8FCA0F;
+}
+
+
+.switch i {
+  cursor: pointer;
+  padding-right: 20px;
+  transition: all ease .2s;
+  -webkit-transition: all ease .2s;
+  box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+  width: 50px;
+  vertical-align: top;
+}
+
+.avatar, .switch i {
+  display: inline-block;
+}
+
+.switch i, .switch i:before {
+  height: 30px;
+  border-radius: 20px;
+}
+
+
+.switch i:before {
+  display: block;
+  width: 30px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+
+
+.landing-page .bubble:after, .sk-spinner-circle .sk-circle:before, .switch i:before {
+  content: '';
+}
+
+.switch input {
+  display: none;
+}

@@ -1,0 +1,8 @@
+archive
+node_modules
+coverage
+bower_components
+dist
+.idea
+.idea/workspace.xml
+
