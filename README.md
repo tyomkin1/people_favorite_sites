@@ -35,8 +35,7 @@ NOTE: To install this project you need npm, bower and gulp.
 ### Test
 1. Open terminal
 2. Move to root project folder
-3. Deploy project with `gulp testKarma`
-4. Use the content of folder with name 'dist'.
+3. Deploy project with `gulp testKarma`.
 
 
 
