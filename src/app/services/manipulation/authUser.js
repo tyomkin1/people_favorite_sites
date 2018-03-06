@@ -45,7 +45,7 @@
           date: new Date().getTime(),
           id: 1
         };
-        this.setData(data);
+        this.setData(session);
         return true;
       } else {
         return false;

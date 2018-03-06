@@ -118,7 +118,7 @@ gulp.task('replace_bower', function(){
 
 });
 
-gulp.task('build', ['html', 'fonts', 'other', 'replace_bower']);
+gulp.task('build', ['html', 'fonts', 'other']);
 
 
 
