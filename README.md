@@ -1,4 +1,4 @@
-# GoodSite
+# GoodSite.
 
 ### Sites screens 
 ![Alt text](/screenshots/users.png?raw=true "Optional Title")
